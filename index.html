@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Valentines Day</title>
+</head>
+<body>
+    <div>
+        <img id="my-image" src="valentine.gif" style="display: none;">
+        
+        <button id="show-image-button">
+            Click me
+        </button>
+        
+    </div>  
+    <h1 id="text" style="display: none; text-align: center;">HAPPYYYY VALENTINEEEE!!!!</h1>
+    <script>
+        const showImageButton = document.getElementById("show-image-button");
+        const myImage = document.getElementById("my-image"); 
+        const showText = document.getElementById("text");
+        let clicked = false;
+        showImageButton.addEventListener("click", () => { 
+            if (!clicked) {
+                myImage.src = "valentine.gif"; // Change the source to another image
+                myImage.style.display = "block"; 
+                showText.style.display ="block";
+                showImageButton.textContent = "Click again";
+                showText.textContent = "HAPPYYYY VALENTINEEEE!!!!";
+                clicked = true;
+            } else {
+                myImage.src = "cat.gif"; // Change the source back to the original image
+                showImageButton.textContent = "Click me";
+                showText.style.display = "block"; 
+                showText.textContent = "WUVVVVVVVV YOUUUUUUUU!!!!!";
+                clicked = false;
+            }
+        });
+     </script>
+</body>
+</html>
